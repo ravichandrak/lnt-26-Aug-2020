@@ -43,21 +43,21 @@ function Book(id, title, coverPageUrl, author, price, rating) {
 //BookManager Object
 function BookManager() {
 
-    this.addBook = function() {} 
+    this.addBook = function() {}
 
-    this.getAllBooks = function() {} 
+    this.getAllBooks = function() {}
 
     this.getBookById = function() {}
 
-    this.getBookByAuthor = function() {} 
+    this.getBookByAuthor = function() {}
 
-    this.searchOnTitle = function() {} 
+    this.searchOnTitle = function() {}
 
-    this.searchInPriceRange = function() {} 
+    this.searchInPriceRange = function() {}
 
-    this.searchInReviewRange = function() {} 
+    this.searchInReviewRange = function() {}
 
-    this.deleteBook = function() {} 
+    this.deleteBook = function() {}
 
     this.updateBook = function() {}
 }
