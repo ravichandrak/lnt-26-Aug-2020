@@ -1,3 +1,7 @@
+// Assignment - 02
+// Date : 26-Aug-2020
+// ------------------------------------------------------------------------------------
+
 //Author Object
 function Author(id, name, biography, birthDate, email, photographUrl, booksList) {
     this.id = id; 
