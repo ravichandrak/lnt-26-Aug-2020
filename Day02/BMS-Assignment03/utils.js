@@ -26,7 +26,7 @@ function searchSingle(list, isMatch){
 }
 
 module.exports = {
-    //contains:contains  //ES5 syntax
+    
     searchAll,
     searchSingle,
     inRange,

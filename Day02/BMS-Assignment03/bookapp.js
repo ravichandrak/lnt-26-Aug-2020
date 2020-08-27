@@ -1,7 +1,5 @@
 
-let Book=require('./book'); //Author object is exported
-
-//we will use extraction syntax to extract required fields from module.export
+let Book=require('./book'); 
 let { BookManager, showBooks } = require('./bookmanager');
 const { contains, inRange } = require('./utils');
 
