@@ -5,7 +5,7 @@ let Book=require('./book'); //Author object is exported
 let { BookManager, showBooks } = require('./bookmanager');
 const { contains, inRange } = require('./utils');
 
-//----- my application logic here ---
+// -------------------------------------------------------
 
 let manager = new BookManager();
 let a1 = new Book('book-1','Lost Epic Series',["vivek Mishra"], 150, 4);
