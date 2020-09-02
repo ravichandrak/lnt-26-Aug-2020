@@ -5,10 +5,10 @@ import {BooksWebHeaderComponent} from './books-web-header-component/books-web-he
 import {BooksWebFooterComponent} from './books-web-footer.component'; 
 
 import { BookInfoComponent } from './book-info/book-info.component';
-import { BookListComponent } from './book-list/book-list.component';
-import { CaRangeComponent } from './ca-range/ca-range.component'; 
+import { BookListComponent } from './book-list/book-list.component'; 
 
-import { CaStarRatingComponent } from './ca-starRating/ca-star-rating.component'; 
+
+
 
 @NgModule({
 
@@ -20,11 +20,12 @@ import { CaStarRatingComponent } from './ca-starRating/ca-star-rating.component'
         BooksWebAppComponent,
         BooksWebHeaderComponent,
         BooksWebFooterComponent,
+        
         BookInfoComponent,
-        BookListComponent,
-        CaRangeComponent,
-        CaStarRatingComponent
-    ],
+        
+        BookListComponent
+        
+    ],    
     
     bootstrap:[  //startup compoent for the module
         BooksWebAppComponent   //only root component should be in bootstrap

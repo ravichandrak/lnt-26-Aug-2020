@@ -8,7 +8,8 @@
         <tr>
             <th *ngIf='showImages'>
                 Poster
-                <ca-range [value]=120 [min]=50 [max]=200 [delta]=10 (onValueChange)="onImageValueChange($event)"></ca-range>
+                <input type='button' value='+' (click)="increaseImageSize()">
+                <input type='button' value='-' (click)="decreaseImageSize()">
             </th>
             <th>Title</th>
             <th>Author</th>
@@ -18,19 +19,13 @@
     </thead>
     <tbody>
         <tr  *ngFor='let book of books' >
-
             <td *ngIf='showImages'   >  
                 <img [hidden]='!showImages'  [src]='book.cover'  [style.width.px]='imageWidth' >
             </td>
             <td>{{book.title}}</td>
             <td>{{book. author}}</td>
             <td>{{book.price}}</td>
-            <td>
-                <ca-star-rating [rating]="book.rating"></ca-star-rating>
-                {{book.rating}}
-                
-
-            </td>
+            <td>{{book.rating}}</td>
         </tr>
      
         
