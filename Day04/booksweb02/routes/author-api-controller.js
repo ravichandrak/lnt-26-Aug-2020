@@ -2,13 +2,9 @@ const AuthorService = require("../services/author-service");
 const Author=require('../entities/author');
 const AuthorRepository=require('../repositories/author-repository');
 
-
 let authorRepository=new AuthorRepository();
 
 var authorService=new AuthorService(authorRepository);
-
-
-
 
 async function  getAuthorList(request,response){
     let authors=await authorService.getAll();

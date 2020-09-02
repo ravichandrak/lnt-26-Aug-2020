@@ -22,7 +22,5 @@ export class CaStarRatingComponent implements OnInit {
   ngOnInit(): void {
     
     this.ratingInPrec = ((this.rating/this.numStars) * 100) + '%';
-  }
-
-  
+  }  
 }

@@ -22,8 +22,6 @@ var expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
 app.set('layout','masterpage');
 
-
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

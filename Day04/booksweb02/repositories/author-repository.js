@@ -39,14 +39,14 @@ class AuthorRepository{
         return  await client.db(dbname).collection(collectionName);
     }
 
-    async getAll(){
+    async getAll() {
         
         let collection =await this.getAuthorCollection();
         return await collection.find().toArray();
     
     }
 
-    async add(author){
+    async add(author) {
         //this.authors.push(author); //store locally in memory
         //await this.save();  //also save it in the file
 
@@ -55,14 +55,14 @@ class AuthorRepository{
         
     }
 
-    async getById(id){
+    async getById(id) {
         //let author=await (await this.getAll()).find(a=>a.id===id);
         let collection=await this.getAuthorCollection();
         let author =await collection.findOne({id:id});
         return author;
     }
 
-    async remove(id){
+    async remove(id) {
        let collection=await this.getAuthorCollection();
        await collection.deleteOne({id:id});
     }
