@@ -85,6 +85,38 @@ class AuthorService {
         
     }
 
+    async getAuthorBooksById(id) {
+        let book = await this.authorRepository.getAuthorBooksById(id);
+        return book;
+    }
+
+    async getAuthorPhotographById(id) {
+        let photograph = await this.authorRepository.getAuthorPhotographById(id);
+        return photograph;
+    }
+    
+    async updateAuthor(id, author) {
+
+        let cAuthor = await this.getById(id);
+
+        if (cAuthor) {
+
+            if(author && author.name) {
+                
+                if(!author.id)
+                    author.id=author.name.toLowerCase().replace(' ','-');
+                if(!author.books)
+                    author.books=[];
+                await this.authorRepository.update(id, author);
+            }
+            else{
+                console.log('author update failed');
+            }
+        } else {
+            console.log('author id not found');
+        }
+    }
+
 }
 
 

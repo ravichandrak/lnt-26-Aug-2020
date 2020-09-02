@@ -15,13 +15,13 @@ const uri = `mongodb+srv://${username}:${password}@${server}/${dbname}?retryWrit
 
 const client = new MongoClient(uri, { useNewUrlParser: true,useUnifiedTopology: true });
 
-class AuthorRepository{
+class AuthorRepository {
 
-    constructor(){
-        this.collection=null;
+    constructor() {
+        this.collection = null;
         client
             .connect()
-            .then(async()=>{
+            .then(async() => {
                 this.collection= await client.db(dbname).collection(collectionName);
                 console.log('Author collection is created');
             });
@@ -73,7 +73,7 @@ class AuthorRepository{
 
     async remove(id){
        
-       await collection.deleteOne({id:id});
+       await this.collection.deleteOne({id:id});
     }
 
     save() {
@@ -81,6 +81,27 @@ class AuthorRepository{
             setTimeout(()=>resolve(), 10);
         });
     }
+
+    async getAuthorBooksById(id) {
+        const option = {
+            projection : { books : 1 }
+        }
+        let books = await this.collection.find({id:id}, option).toArray();
+        return books;
+    }
+
+    async getAuthorPhotographById(id) {
+        const option = {
+            projection : { photograph : 1 }
+        }
+        let photograph = await this.collection.find({id:id}, option).toArray();
+        return photograph;
+    }
+
+    async update(id, author) {
+        await this.collection.updateOne({id : id}, {$set : author});
+    }
+
 }
 
 module.exports=AuthorRepository;

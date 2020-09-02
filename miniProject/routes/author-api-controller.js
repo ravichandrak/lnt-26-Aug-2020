@@ -2,7 +2,6 @@ const AuthorService = require("../services/author-service");
 const Author=require('../entities/author');
 const AuthorRepository=require('../repositories/author-repository');
 
-
 let authorRepository = new AuthorRepository();
 
 var authorService = new AuthorService(authorRepository);
@@ -17,8 +16,19 @@ async function  getAuthorList(request,response){
     await response.send(authors);  
 }
 
-async function addAuthor(request,response){
-    var author=request.body;
+async function addAuthor(request, response){
+    var author=
+    {
+        "id":"vivek-dutta-mishra",
+        "name":"Vivek Dutta Mishra",
+        "biography":"Author of the Amazon Best Seller The Accursed God",
+        "photograph":"vivek.png",
+        "email":"vivek@conceptarchitect.in",
+        "books":[]
+    };
+    
+    //request.body;
+    
     try{
         await authorService.add(author);
         response.status(201); //created
@@ -55,6 +65,60 @@ async function removeAuthor(request,response){
     await response.send({});
 }
 
+async function getAuthorBooksById(request, response) {
+    let id= request.params.authorId; //this should be the last part of url /authors/details/:authorId
+    try {
+    //user logic
+    let book = await authorService.getAuthorBooksById(id);
+    if(book)
+        await response.send(book); //express
+    else{
+        response.status(404); //not found -->express
+        await response.send({error: `author books not found`, id:id}); //express
+    }
+    } catch(e) {
+        response.status(400);
+        await response.send(e.message);
+        console.log(e.message);
+    }
+}
+
+async function getAuthorPhotographById(request, response) {
+    let id= request.params.authorId; //this should be the last part of url /authors/details/:authorId
+    try {
+    //user logic
+    let photograph = await authorService.getAuthorPhotographById(id);
+    if(photograph)
+        await response.send(photograph); //express
+    else{
+        response.status(404); //not found -->express
+        await response.send({error: `author photograph not found`, id:id}); //express
+    }
+    } catch(e) {
+        response.status(400);
+        await response.send(e.message);
+        console.log(e.message);
+    }
+}
+
+async function updateAuthor(request, response) {
+    
+    let id= request.params.authorId;
+    let author = request.body;
+    try {
+
+        await authorService.updateAuthor(id, author);
+        response.status(201); //updated
+        await response.send({});
+    
+    } catch(e) {
+        response.status(400);
+        await response.send(e.message);
+        console.log(e.message);
+    }
+}
+
+
 
 
 var express = require('express');
@@ -64,7 +128,9 @@ var router = express.Router();
 router.get('/', getAuthorList);
 router.post('/', addAuthor);
 router.get('/:authorId', getAuthorById);
+router.get('/:authorId/books', getAuthorBooksById);
+router.get('/:authorId/photograph', getAuthorPhotographById);
+
 router.delete('/:authorId', removeAuthor);
-
-
+router.put('/:authorId', updateAuthor);
 module.exports = router;

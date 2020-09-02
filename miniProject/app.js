@@ -5,9 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var authorApiRouter= require('./routes/author-api-controller');
-var bookApiRouter= require('./routes/book-api-controller');
+//var bookApiRouter= require('./routes/book-api-controller');
 
-port = process.env.Port || 8000;
+port = process.env.Port || 80;
 
 var app = express();
 app.use(logger('dev'));
@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/api/authors', authorApiRouter);
-app.use('/api/books', bookApiRouter);
+//app.use('/api/books', bookApiRouter);
 
 
 // catch 404 and forward to error handler
