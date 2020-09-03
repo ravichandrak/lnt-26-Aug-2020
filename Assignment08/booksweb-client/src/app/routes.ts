@@ -2,11 +2,11 @@ import {Route} from '@angular/router';
 import {BookListComponent} from './book-list/book-list.component'; 
 import {BookCompositeComponent} from './book-composite/book-composite.component'; 
 import {BookInfoComponent} from './book-info/book-info.component'; 
-import {CaNotFoundComponent} from './ca-not-found/ca-not-found.component'; 
+import {BookAddComponent} from './book-add/book-add.component'; 
+import {AuthorAddComponent} from './author-add/author-add.component'; 
+import {AuthorListComponent} from './author-list/author-list.component'; 
 
-
-
-
+import {CaNotFoundComponent} from './ca-not-found/ca-not-found.component';
 
 export const appRoutes:Route[]=[
     
@@ -14,7 +14,14 @@ export const appRoutes:Route[]=[
 
     {path: 'book/list', component: BookListComponent },
     
+    {path: 'author/list', component: AuthorListComponent },
+    
     {path: 'book/info/:bookId', component:BookInfoComponent},
+
+    {path: 'book/add', component: BookAddComponent },
+    
+    {path: 'author/add', component: AuthorAddComponent },
+    
 
     {path: '404', component:CaNotFoundComponent},
 

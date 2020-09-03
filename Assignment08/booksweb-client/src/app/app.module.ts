@@ -22,7 +22,10 @@ import { BookCompositeComponent } from './book-composite/book-composite.componen
 
 //get the route details
 import {appRoutes} from './routes';
-import { CaNotFoundComponent } from './ca-not-found/ca-not-found.component'; 
+import { CaNotFoundComponent } from './ca-not-found/ca-not-found.component';
+import { BookAddComponent } from './book-add/book-add.component';
+import { AuthorAddComponent } from './author-add/author-add.component';
+import { AuthorListComponent } from './author-list/author-list.component'; 
 
 
 
@@ -64,7 +67,19 @@ import { CaNotFoundComponent } from './ca-not-found/ca-not-found.component';
         
         
         
-        CaNotFoundComponent
+        CaNotFoundComponent,
+        
+        
+        
+        BookAddComponent,
+        
+        
+        
+        AuthorAddComponent,
+        
+        
+        
+        AuthorListComponent
         
     ],    
     
