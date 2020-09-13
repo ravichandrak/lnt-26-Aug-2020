@@ -2,11 +2,11 @@
 
 #### 1) Angular Web App : 
 (Included web page screenshot inside the folder)
- - App uses port 80
+ - App uses **port - 80**
  - Folder Name: **Angular_App**
 
 #### 2) NodeJS API :
- - Uses Port 3000 
+ - API Uses **Port - 3000**
  - Folder Name: **nodeJS_API**
 
 #### 3) Docker Hub:
