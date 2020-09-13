@@ -1,5 +1,5 @@
 FROM node:alpine
-WORKDIR '/nodeapi'
+WORKDIR '/nodejs-api'
 
 COPY package.json .
 RUN npm install

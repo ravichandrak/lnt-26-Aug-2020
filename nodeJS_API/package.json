@@ -4,7 +4,7 @@
   "description": "webserver api for BMS",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./bin/www.js"
+    "start": "node app.js"
   },
   "author": "Ravichandra K",
   "license": "ISC",
