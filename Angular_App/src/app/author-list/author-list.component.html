@@ -1,0 +1,34 @@
+<h1 class='page-title'>Authors</h1>
+ 
+<table class="table table-condensed table-striped table-hover">
+    <thead class="thead-dark"> 
+        <tr class="text-center">
+            <th  *ngIf='showImages'>Photograph
+            </th>
+            <th>Name</th>
+            <th>Biography</th>
+            <th>Email</th>
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor='let author of authors'>
+           
+            <td *ngIf='showImages'>  
+                
+                <img [hidden]='!showImages'  [src]='author.photoUrl|altvalue:author.id:".jpg"|prefix:"/assets/images/authors/"'  [style.width.px]='imageWidth' >
+            </td>
+             <td class = 'titlewidth'>{{author.name|uppercase}}</td>
+             <td>{{author.biography}} </td>
+             <td>{{author.email}}</td>
+            <td><a class='btn btn-info text-nowrap' [routerLink]="['/author/details',author.id]">More Info</a></td>
+            <td><button class='btn btn-danger' (click)='deleteAuthor(author.id)'>Delete</button></td>
+        </tr>
+      
+        
+    </tbody>
+</table>
+ 
+<hr/>
+<p class='tags'>Total authors: {{authors.length}}</p>

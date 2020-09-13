@@ -1,0 +1,24 @@
+# install the slim version of node version 12
+FROM node:12-alpine
+
+#create a folder on docker image
+# cd into that folder
+WORKDIR /user/app
+
+#copy from my local folder package.json to docker image
+COPY package*.json .
+
+#run npm install within docker image
+RUN npm install
+
+#copy the remain source file except those mentioned in .dockerignore
+COPY . . 
+
+#when docker will it should explose its port 7000 to outside the container
+EXPOSE 7000
+
+#now the last command is to start within the container
+CMD ["npm", "start"]
+
+
+

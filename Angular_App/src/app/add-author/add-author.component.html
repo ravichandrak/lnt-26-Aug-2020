@@ -1,0 +1,37 @@
+
+<h1 class='page-title'>Add New Author</h1>
+
+<div class='container'>
+
+        <div class='form-group'>
+            <label for='isbn'>Id</label>
+            <input type='text' class='form-control' id='id'  [(ngModel)]='author.id' placeholder='Enter author id'>
+            <small id='isbnHelp' class='form-text text-muted'>Enter the id (first name in small lettors) </small>
+        </div>
+        
+        <div class='form-group'>
+            <label for='title'>Author Name</label>
+            <input type='text' class='form-control' id='name'  [(ngModel)]='author.name' aria-describedby='titlelHelp' placeholder='Enter author name'>
+            <small id='titleHelp' class='form-text text-muted'>Enter Author Name</small>
+        </div>
+        
+        <div class='form-group'>
+            <label for='author'>Biography</label>
+            <input type='text' class='form-control' id='biography'  [(ngModel)]='author.biography'   aria-describedby='authorlHelp' placeholder='Enter author biography'>
+            <small id='authorHelp' class='form-text text-muted'>Enter the biography of the author</small>
+        </div>
+        
+        <div class='form-group'>
+            <label for='price'>Email</label>
+            <input type='text' class='form-control' id='email'  [(ngModel)]='author.email'   aria-describedby='pricelHelp' placeholder='Enter author email id'>
+            <small id='priceHelp' class='form-text text-muted'>Enter the value email id of the author</small>
+        </div>
+        
+        <button class='btn btn-primary btn-lg' (click)='onAddAuthor()' >Add Author</button>
+
+        <ul class='error'>
+            <li *ngFor='let error of errors' class='text-danger'>{{error}}</li>
+        </ul>
+</div>
+
+
