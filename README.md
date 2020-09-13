@@ -7,7 +7,7 @@ https://github.com/ravichandrak/lnt-26-Aug-2020/tree/master/Angular_App
 #### 2) NodeJS API :
 https://github.com/ravichandrak/lnt-26-Aug-2020/tree/master/nodeJS_API
 
-#### Docker Hub:
+#### 3) Docker Hub:
 
 - ravichandralnt/angular-app
 - ravichandralnt/node-web-api
