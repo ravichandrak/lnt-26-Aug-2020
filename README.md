@@ -1,6 +1,7 @@
 ### ---------- LnT Angular FullStack Training Repository ------------
 
-#### 1) Angular Web App :
+#### 1) Angular Web App : 
+(Included web page screenshot inside the folder)
 https://github.com/ravichandrak/lnt-26-Aug-2020/tree/master/Angular_App
 
 #### 2) NodeJS API :
